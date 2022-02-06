@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 function AboutSection() {
 
-    const AboutSectionWrapper = styled.div`
+    const AboutSectionWrapper = styled.section`
         background: ${props => props.theme.colors[1]};
-        padding: 30px 0 300px 0;
+        padding: 30px 0 200px 0;
         display: flex;
         justify-content: center;
     `
@@ -15,7 +15,7 @@ function AboutSection() {
         color: ${props => props.theme.colors[4]};
         width: 50%;
 
-        ${props => props.theme.media.mobile} {
+        ${props => props.theme.media.tablet} {
             width: 80%;
         }
     `

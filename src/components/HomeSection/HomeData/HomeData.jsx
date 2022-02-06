@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { HashLink } from "react-router-hash-link";
-import Avatar from "../../../assets/avatar.png";
+import Avatar from "../../../assets/images/avatar.png";
 import CV from "../../../assets/CV.pdf";
 
 

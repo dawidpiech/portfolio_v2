@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import AboutSection from "../components/AboutSection/AboutSection";
 import HomeSection from "../components/HomeSection/HomeSection";
 import Navigation from "../components/Navigation/Navigation";
+import SkillsSection from "../components/SkillsSection/SkillsSection";
 
 function Home() {
   const Layout = styled.div`
