@@ -1,5 +1,5 @@
 export const lightTheme = {
-  colors: ["#000000", "#2E332F", "#FECB00", "#FFD535", "#FFFFFF"],
+  colors: ["#000000", "#56667B", "#FECB00", "#FFD535", "#FFFFFF"],
   media: {
     mobile: '@media (max-width: 768px)',
     tablet: '@media (max-width: 1024px)',

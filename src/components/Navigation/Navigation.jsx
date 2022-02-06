@@ -17,22 +17,22 @@ function Navigation() {
         },
         {
             name: "About",
-            id: "section-2",
+            id: "about",
             icon: <BsPerson />
         },
         {
             name: "Skills",
-            id: "section-4",
+            id: "skills",
             icon: <GoTools />
         },
         {
             name: "Work",
-            id: "section-3",
+            id: "my-projects",
             icon: <BsBriefcase />
         },
         {
             name: "Contact",
-            id: "section-5",
+            id: "contact",
             icon: <AiOutlineMessage />
         }
     ];
@@ -51,7 +51,7 @@ function Navigation() {
         z-index: 1000;
 
         ${({theme}) => theme.media.tablet} {
-            width: 90%;
+            width: 80%;
         }
 
 

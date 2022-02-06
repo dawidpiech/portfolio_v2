@@ -7,14 +7,26 @@ function Logo() {
         height: 100px;
         width: 100px;
         padding: 15px;
+        margin: 10px;
+        position: absolute;
+
+        ${({theme}) => theme.media.tablet} {
+            width: 70px;
+            height: 70px;
+        }
         
 
         & > svg {
             height: 70px;
             position: absolute;
             top: 30px;
-            left: 30px;
+            left: 35px;
 
+            ${({theme}) => theme.media.tablet} {
+                height: 50px;
+                top: 25px;
+                left: 28px;
+            }
         }
 
         &:before{
@@ -27,6 +39,11 @@ function Logo() {
             background: ${props => props.theme.colors[3]};
             z-index: 1;
             transform: rotate(25deg);
+
+            ${({theme}) => theme.media.tablet} {
+                width: 70px;
+                height: 70px;
+            }
         }
     `
 
