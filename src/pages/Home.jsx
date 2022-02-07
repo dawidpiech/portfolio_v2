@@ -4,6 +4,10 @@ import AboutSection from "../components/AboutSection/AboutSection";
 import HomeSection from "../components/HomeSection/HomeSection";
 import Navigation from "../components/Navigation/Navigation";
 import SkillsSection from "../components/SkillsSection/SkillsSection";
+import MyProjectSection from "../components/MyProjectSection/MyProjectSection";
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
+import ContactSection from "../components/ContactSection/ContactSection";
+import Footer from "../components/Footer/Footer";
 
 function Home() {
   const Layout = styled.div`
@@ -17,12 +21,14 @@ function Home() {
 
   return (
     <Layout>
+      {/* <LoadingSpinner></LoadingSpinner> */}
       <Navigation></Navigation>
       <HomeSection></HomeSection>
       <AboutSection></AboutSection>
       <SkillsSection></SkillsSection>
-      <Section id="my-projects"></Section>
-      <Section id="contact"></Section>
+      <MyProjectSection></MyProjectSection>
+      <ContactSection></ContactSection>
+      <Footer></Footer>
     </Layout>
   );
 }

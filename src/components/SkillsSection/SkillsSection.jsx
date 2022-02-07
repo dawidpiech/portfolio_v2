@@ -9,20 +9,23 @@ function SkillsSection() {
     const SkillsSectionWrapper = styled.section`     
         display: flex;
         justify-content: center;
-        padding: 50px;
-        margin: -150px;
+        position: relative;
     `
     const SkillsContent = styled.div`
         max-width: 1200px;
         border-radius: 30px;
-        height: 500px;
         border: solid 1px ${props => props.theme.colors[1]};
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 0 200px;
+        margin: -150px 200px 50px 200px;
         padding: 30px;
         background: ${props=> props.theme.colors[4]};
+        box-shadow: 0px 5px 35px -22px rgba(66, 68, 90, 1);
+
+        ${props => props.theme.media.tablet} {
+            margin: -150px 100px 50px 100px;
+        }
 
         & > h1 {
             font-size: 3rem;
@@ -39,6 +42,7 @@ function SkillsSection() {
         flex-direction: column;
         text-align: center;
         color: ${props => props.theme.colors[2]};
+        padding: 20px 10px;
 
         & > svg{
             align-self: center;
@@ -103,8 +107,8 @@ function SkillsSection() {
     ]
 
   return (
-      <SkillsSectionWrapper id="skills">
-          <SkillsContent>
+      <SkillsSectionWrapper>
+          <SkillsContent id="skills">
               <h1>
                   My Skills
               </h1>
