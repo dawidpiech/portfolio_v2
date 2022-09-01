@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Logo from "../HomeSection/Logo/Logo";
+import { motion } from "framer-motion";
 
 function Footer() {
 
@@ -27,7 +27,7 @@ function Footer() {
 
   return (
       <FooterWrapper>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 189">
+          <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 189" initial={{rotateY: 0, opacity: 0}} whileInView={{ rotateY: 360, opacity: 1}} transition={{duration: 0.7}}>
             <mask id="mask">
                 <rect width="136" height="189" fill="white" />
                 <path
@@ -80,7 +80,7 @@ function Footer() {
                 48.72,26.78 59.09,61.79 59.09,61.79
                 59.09,61.79 60.46,75.11 60.46,75.11 Z"
             />
-        </svg>
+        </motion.svg>
         <span>HANDMADE BY ME © 2022</span>
         <span>ALL RIGHT RESERVED</span>
       </FooterWrapper>

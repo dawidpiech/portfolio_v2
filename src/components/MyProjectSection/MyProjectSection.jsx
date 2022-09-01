@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Sportejo from "../../assets/images/sportejo.png";
-import Billterra from "../../assets/images/billterra.png";
-import Portfolio from "../../assets/images/portfolio.png";
-import Webcatalog from "../../assets/images/webcatalog.png";
+import Sportejo from "../../assets/images/sportejo.jpg";
+import Portfolio from "../../assets/images/portfolio.jpg";
+import { motion } from "framer-motion";
 
 function MyProjectSection() {
 
@@ -12,6 +11,7 @@ function MyProjectSection() {
         justify-content: center;
         flex-wrap: wrap;
         color: ${props => props.theme.colors[1]};
+        background: ${props => props.theme.colors[4]};
 
         & > h1 {
             width: 100%;
@@ -89,7 +89,7 @@ function MyProjectSection() {
         {
             name: "Portfolio",
             technologies: ["React.js", "Styled Components"],
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam reprehenderit libero dolor nihil eligendi soluta, voluptates quasi ipsum molestias illum atque, quidem quos sunt. Beatae quidem accusamus repellat ipsam dolore?",
+            description: "Portfolio page where I presents my projects. It was written in accordance with good practice using React.js and the Styled Components library.",
             mockup: Portfolio,
             linkToRepo: "https://github.com/dawidpiech/portfolio_v2",
             linkToLive: "https://piech.it/"
@@ -97,27 +97,10 @@ function MyProjectSection() {
         {
             name: "Sportejo",
             technologies: ["React.js", "Node.js", "Express.js", "Sass", "MongoDB", "Mongoose"],
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam reprehenderit libero dolor nihil eligendi soluta, voluptates quasi ipsum molestias illum atque, quidem quos sunt. Beatae quidem accusamus repellat ipsam dolore?",
+            description: "Application for renting sports facilities. Node.js with a database based on MongoDB is responsible for the server side, while the frontend was written in React.js.",
             mockup: Sportejo,
             linkToRepo: "https://github.com/dawidpiech/SPORTEJO",
             linkToLive: "https://sportjeo.piech.it/"
-        },
-        {
-            name: "BillTerra",
-            technologies: ["React.js", "Sass", ".Net Core"],
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam reprehenderit libero dolor nihil eligendi soluta, voluptates quasi ipsum molestias illum atque, quidem quos sunt. Beatae quidem accusamus repellat ipsam dolore?",
-            mockup: Billterra,
-            linkToRepo: "https://github.com/dawidpiech/BillTerra",
-            linkToLive: "https://billterra.piech.it/"
-        },
-        
-        {
-            name: "WebCatalog",
-            technologies: ["HTML5", "CSS"],
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam reprehenderit libero dolor nihil eligendi soluta, voluptates quasi ipsum molestias illum atque, quidem quos sunt. Beatae quidem accusamus repellat ipsam dolore?",
-            mockup: Webcatalog,
-            linkToRepo: "https://github.com/dawidpiech/WebCatalog",
-            linkToLive: "https://webcatalog.piech.it/"
         },
     ]
 
@@ -127,7 +110,7 @@ function MyProjectSection() {
           {projectList.map((e, index)=>{
               return (
                 <ProjectWrapper key={index}>
-                    <div>
+                    <motion.div as={motion.div} initial={{opacity: 0, x: -500}} whileInView={{ opacity: 1, x: 0}} transition={{time: 1}}>
                             <h1>{e.name}</h1>
                             <div>
                                 {e.technologies.map((e, index)=>{
@@ -136,11 +119,11 @@ function MyProjectSection() {
                             </div>
                             <p>{e.description}</p>
                             <div>
-                                <Button href={e.linkToLive} target="_blank">LIVE</Button>
-                                <Button href={e.linkToRepo} target="_blank">CODE</Button>
+                                {e.linkToLive !== "" ? <Button href={e.linkToLive} target="_blank">LIVE</Button> : ""}
+                                {e.linkToRepo!=="" ? <Button href={e.linkToRepo} target="_blank">CODE</Button> : ""}
                             </div>
-                    </div>
-                    <img src={e.mockup} alt={e.name}></img>
+                    </motion.div>
+                    <motion.img src={e.mockup} alt={e.name} initial={{opacity: 0, x: 500}} whileInView={{ opacity: 1, x: 0}} transition={{times: [0, 0.7, 1]}}></motion.img>
                 </ProjectWrapper>
               );
           })}

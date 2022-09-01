@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 function AboutSection() {
 
     const AboutSectionWrapper = styled.section`
-        background: ${props => props.theme.colors[1]};
+        background: ${props => props.theme.colors[4]};
         padding: 30px 0 200px 0;
         display: flex;
         justify-content: center;
@@ -12,7 +13,8 @@ function AboutSection() {
 
     const AboutDescription = styled.div`
         text-align: center;
-        color: ${props => props.theme.colors[4]};
+        color: ${props => props.theme.colors[1]};
+        background: ${props => props.theme.colors[4]};
         width: 50%;
 
         ${props => props.theme.media.tablet} {
@@ -22,9 +24,9 @@ function AboutSection() {
 
   return (
       <AboutSectionWrapper id="about">
-            <AboutDescription>
+            <AboutDescription as={motion.div} initial={{ y: 100, opacity: 0}} whileInView={{ y: 0, opacity: 1}} transition={{ duration: 1, times: [0, 0.7, 1] }}>
               <h1>Hi, I'm David. Nice to meet you.</h1>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quas saepe dolorum ex dolores natus illo quia molestiae sapiente magnam minima ab laudantium, dolore deleniti qui error, sit autem. Suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod excepturi totam commodi nihil. Laudantium cum aperiam pariatur accusantium numquam labore cupiditate. Maxime voluptatum sequi nam assumenda dolorum eius vitae tempora. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, unde quod autem possimus optio praesentium accusantium aliquam quisquam illo. Voluptas facilis consequatur consequuntur nemo eaque, praesentium ea sit error molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              I am a computer science graduate and I am looking for experience as a front-end developer. I have a good command of Javascript ES6 and I'm learning React.js. I am eager to raise my qualifications through video courses and articles on technology blogs. I love to analyze and look for the most effective solutions to the problems encountered. I prefer individual work, but I have no problems finding myself in the team. 
             </AboutDescription>
       </AboutSectionWrapper>
   );

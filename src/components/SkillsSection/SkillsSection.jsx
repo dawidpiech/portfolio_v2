@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {DiHeroku, DiReact, DiJsBadge, DiNodejs, DiSass, DiBootstrap, DiMongodb, DiGit, DiHtml5, DiGithubBadge} from "react-icons/di";
 import {SiExpress, SiStyledcomponents} from "react-icons/si";
+import { motion } from "framer-motion";
 
 
 function SkillsSection() {
@@ -20,7 +21,7 @@ function SkillsSection() {
         justify-content: center;
         margin: -150px 200px 50px 200px;
         padding: 30px;
-        background: ${props=> props.theme.colors[4]};
+        background: #FFFFFF;
         box-shadow: 0px 5px 35px -22px rgba(66, 68, 90, 1);
 
         ${props => props.theme.media.tablet} {
@@ -31,7 +32,7 @@ function SkillsSection() {
             font-size: 3rem;
             width: 100%;
             text-align: center;
-            color: ${props => props.theme.colors[1]};
+            color: ${props => props.theme.colors[0]};
             margin: 10px 0;
         }
     `
@@ -50,7 +51,7 @@ function SkillsSection() {
         }
 
         & > span {
-            color: ${props => props.theme.colors[1]};,
+            color: ${props => props.theme.colors[0]};,
             font-size: 1rem;
         }
     `
@@ -114,7 +115,7 @@ function SkillsSection() {
               </h1>
             {skillList.map((e, index)=>{
                 return (
-                    <Skill key={index}>
+                    <Skill key={index} as={motion.div} initial={{ rotate: 100, opacity: 0}} whileInView={{ rotate: 0, opacity: 1}} transition={{ duration: 1, delay: index * 0.1}} >
                         {e.icon}
                         <span>{e.name}</span>
                     </Skill>

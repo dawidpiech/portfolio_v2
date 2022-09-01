@@ -9,21 +9,17 @@ import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 import ContactSection from "../components/ContactSection/ContactSection";
 import Footer from "../components/Footer/Footer";
 
-function Home() {
+function Home(props) {
   const Layout = styled.div`
     overflow-x: hidden;
   `
 
-  const Section = styled.section`
-    width: 100%;
-    height: 800px;
-  `
 
   return (
     <Layout>
       {/* <LoadingSpinner></LoadingSpinner> */}
       <Navigation></Navigation>
-      <HomeSection></HomeSection>
+      <HomeSection changeTheme={props.changeTheme}></HomeSection>
       <AboutSection></AboutSection>
       <SkillsSection></SkillsSection>
       <MyProjectSection></MyProjectSection>

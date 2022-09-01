@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { HashLink } from "react-router-hash-link";
 import Avatar from "../../../assets/images/avatar.png";
 import CV from "../../../assets/CV.pdf";
+import { motion } from "framer-motion";
 
 
 
@@ -23,6 +24,7 @@ function HomeData() {
 
         & > span {
             font-weight: 600;
+            color: ${props => props.theme.colors[1]};
 
             ${props => props.theme.media.mobile} {
                 font-size: 1rem;
@@ -42,6 +44,7 @@ function HomeData() {
         }
 
         & > h1 {
+            color: ${props => props.theme.colors[1]};
             font-weight: 900;
             font-size: 2rem;
             margin: 15px;
@@ -63,6 +66,7 @@ function HomeData() {
         border: solid ${({theme}) => theme.colors[3]};
         padding: 10px 30px;
         margin: 10px 20px;    
+        cursor: pointer;
 
         &:hover{
             background: ${({theme}) => theme.colors[3]};
@@ -84,6 +88,7 @@ function HomeData() {
         border: solid ${({theme}) => theme.colors[1]};
         padding: 10px 30px;
         margin: 10px 20px;
+        cursor: pointer;
 
         &:hover{
             background: ${({theme}) => theme.colors[1]};
@@ -111,11 +116,11 @@ function HomeData() {
         }
 
         ${props => props.theme.media.mobile} {
-            width: 200px;
-            height: 200px; 
+            width: 400px;
+            height: 400px; 
 
             & > img{
-            height: 220px;
+            height: 420px;
             }
         }
     `
@@ -127,11 +132,11 @@ function HomeData() {
             <span>Hello, I'm</span>
             <h1>Dawid Piech</h1>
             <h3>Beginner front end developer</h3>
-            <div>
+            <motion.div initial={{opacity: 0}} whileInView={{ opacity: 1}} transition={{duration: 1}}>
                 <ButtonAbout smooth to="#about">About Me</ButtonAbout>
-                <ButtonDownloadCV href={CV}>Download CV</ButtonDownloadCV>
-            </div>
-            <AvatarWrapper>
+                <ButtonDownloadCV href={CV} target="_blank" >Download CV</ButtonDownloadCV>
+            </motion.div>
+            <AvatarWrapper as={motion.div} initial={{ x: -300, opacity: 0}} whileInView={{ x: 0, opacity: 1}} transition={{duration: 0.3}}>
                 <img src={Avatar} alt="Avatar"/>
             </AvatarWrapper>
         </HomeDataWrapper>

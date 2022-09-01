@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 function ContactSection() {
 
@@ -37,8 +38,8 @@ function ContactSection() {
 
   return (
       <ContactSectionWrapper id="contact">
-          <h1>Contact to me.</h1>
-          <Button href="mailto:dawid.piech243@gmail.com">SEND ME A MAIL</Button>
+          <motion.h1 initial={{x: -100, opacity: 0}} whileInView={{ x: 0, opacity: 1}} transition={{duration: 1}}>Contact to me.</motion.h1>
+          <Button href="mailto:dawid.piech243@gmail.com" as={motion.a} initial={{y: 50, opacity: 0}} whileInView={{ y: 0, opacity: 1}} transition={{duration: 1}}>SEND ME A MAIL</Button>
       </ContactSectionWrapper>
   );
 }
