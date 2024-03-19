@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import AboutSection from "../components/AboutSection/AboutSection";
 import HomeSection from "../components/HomeSection/HomeSection";
 import Navigation from "../components/Navigation/Navigation";
@@ -12,12 +12,11 @@ import Footer from "../components/Footer/Footer";
 function Home(props) {
   const Layout = styled.div`
     overflow-x: hidden;
-  `
-
+  `;
 
   return (
     <Layout>
-      {/* <LoadingSpinner></LoadingSpinner> */}
+      <LoadingSpinner></LoadingSpinner>
       <Navigation></Navigation>
       <HomeSection changeTheme={props.changeTheme}></HomeSection>
       <AboutSection></AboutSection>
