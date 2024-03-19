@@ -3,52 +3,61 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 function Footer() {
+  const FooterWrapper = styled.section`
+    background: ${(props) => props.theme.colors[1]};
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 0 150px 0;
+    align-items: center;
 
-    const FooterWrapper = styled.section`
-        background: ${props => props.theme.colors[1]};
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 50px 0 150px 0;
+    & > svg {
+      height: 200px;
+      fill: ${(props) => props.theme.colors[2]};
+      margin-bottom: 40px;
+      width: fit-content;
+    }
 
-        & > svg {
-            height: 200px;
-            fill: ${props => props.theme.colors[2]};
-            margin-bottom: 40px;
-        }
-
-        & > span {
-            color: ${props => props.theme.colors[4]};
-            text-align: center;
-            font-weight: 100;
-            font-size: 1.5rem;
-        }
-    `
+    & > span {
+      color: ${(props) => props.theme.colors[4]};
+      text-align: center;
+      font-weight: 100;
+      font-size: 1rem;
+      letter-spacing: 0.5rem;
+      line-height: 1.5rem;
+    }
+  `;
 
   return (
-      <FooterWrapper>
-          <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 189" initial={{rotateY: 0, opacity: 0}} whileInView={{ rotateY: 360, opacity: 1}} transition={{duration: 0.7}}>
-            <mask id="mask">
-                <rect width="136" height="189" fill="white" />
-                <path
-                    fill="black"
-                    d="M 68.00,82.00
+    <FooterWrapper>
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 136 189"
+        initial={{ rotateY: 180, scale: 0, opacity: 0 }}
+        whileInView={{ rotateY: 720, scale: 1, opacity: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        <mask id="mask">
+          <rect width="136" height="189" fill="white" />
+          <path
+            fill="black"
+            d="M 68.00,82.00
                     C 68.00,82.00 61.03,21.54 78.43,21.69
                     100.72,21.20 68.94,81.09 68.00,82.00 Z"
-                />
-                <path
-                    fill="black"
-                    d="M 88.20,103.68
+          />
+          <path
+            fill="black"
+            d="M 88.20,103.68
                     C 89.92,89.86 104.44,84.15 103.86,84.08
                     110.01,80.84 124.76,76.65 123.00,93.00
                     118.29,110.98 100.07,123.51 97.19,125.81
                     94.00,127.26 94.91,127.07 90.64,128.53
                     89.75,126.80 89.78,126.43 89.37,125.16
                     87.86,120.45 86.82,114.68 88.20,103.68 Z"
-                />
-                <path
-                    fill="black"
-                    d="M 53.00,105.00
+          />
+          <path
+            fill="black"
+            d="M 53.00,105.00
                     C 55.87,99.94 58.03,95.70 56.97,87.01
                     54.03,80.57 54.11,80.88 50.90,77.98
                     47.98,75.52 43.95,72.00 39.51,72.50
@@ -56,11 +65,11 @@ function Footer() {
                     24.45,82.14 16.60,94.48 15.75,102.92
                     14.89,111.38 23.82,117.15 32.27,116.09
                     40.15,115.09 50.12,110.06 53.00,105.00 Z"
-                />
-            </mask>
-            <path
-                mask="url(#mask)"
-                d="M 60.46,75.11
+          />
+        </mask>
+        <path
+          mask="url(#mask)"
+          d="M 60.46,75.11
                 C 60.46,75.11 50.53,66.75 44.69,65.24
                 38.86,63.73 35.21,62.85 28.46,66.68
                 20.36,70.34 8.11,77.11 1.96,98.91
@@ -79,11 +88,11 @@ function Footer() {
                 106.56,17.71 89.34,-12.93 69.03,6.92
                 48.72,26.78 59.09,61.79 59.09,61.79
                 59.09,61.79 60.46,75.11 60.46,75.11 Z"
-            />
-        </motion.svg>
-        <span>HANDMADE BY ME © 2022</span>
-        <span>ALL RIGHT RESERVED</span>
-      </FooterWrapper>
+        />
+      </motion.svg>
+      <span>HANDMADE BY ME © 2022</span>
+      <span>ALL RIGHT RESERVED</span>
+    </FooterWrapper>
   );
 }
 
